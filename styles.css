@@ -1,0 +1,172 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffebf0; /* Fondo suave para enamorados */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 90%;  /* Contenedor más grande para pantallas grandes */
+    width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+    overflow-y: auto; /* Permite que el contenido largo se desplace */
+}
+
+h1 {
+    font-size: 2.5em; /* Título más grande */
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h1 span {
+    font-size: 1.3em;
+    color: #ff6f61;
+    font-style: italic;
+}
+
+button {
+    padding: 10px 25px;  /* Botón con más espacio */
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff3b2f;
+    transform: scale(1.05);
+}
+
+.dedicatoria {
+    font-size: 1.2em; /* Reduce el tamaño del texto de la dedicatoria */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    padding: 0 15px;  /* Espaciado para que no quede pegado al borde */
+    max-height: 400px; /* Limitar la altura para que no sobrecargue */
+    overflow-y: auto; /* Permitir desplazamiento si es necesario */
+}
+
+.hidden {
+    display: none;
+}
+
+#mensaje-final {
+    font-size: 1.3em;
+    color: #32cd32;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Animación para los corazones cayendo */
+@keyframes caerCorazon {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Corazones cayendo */
+.corazon {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: caerCorazon 4s infinite;
+}
+
+.corazon:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+.corazon:nth-child(even) {
+    animation-duration: 5s;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) {
+    .container {
+        width: 75%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;  /* Ajustar título */
+    }
+
+    .dedicatoria {
+        font-size: 1.1em;  /* Ajustar tamaño de texto */
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;  /* Ajustar título para pantallas medianas */
+    }
+
+    .dedicatoria {
+        font-size: 1em;  /* Ajuste de tamaño de texto */
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6em; /* Título más pequeño en pantallas móviles */
+    }
+
+    .dedicatoria {
+        font-size: 0.95em;  /* Ajuste de texto */
+        max-height: 300px;  /* Limitar la altura del texto */
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+}
